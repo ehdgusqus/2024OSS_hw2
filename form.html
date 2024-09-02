@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="form2.html">
-        이름 : <input type="text" name="username" value="이름을 입력"><br>
-        암호 : <input type="password" name="pwd"><br>
-        성별 : <input type="radio" name="gender" value="m">남
-        <input type="radio" name="gender" value="w">여<br>
-        색상 : <input type="color" name="color" value="#ff0000"><br>
-        포트폴리오: <input type="file" name ="file1"><br>
-        생년월일 : <input type="date" name="date1"><br>
-        <input type="submit" value="save">
-        <input type="reset" value="reset">
+        <h2>Your cart</h2>
+        <p>Product name</p>
+        <p>Second product</p>
+        <p>Third item</p>
+        <p>Promo code</p>
+        <p>Total(USD)</p>
+        <input type="text" name="promocode" value="Promo code">
+        <input type="reset" name="reset" value="Redeem">
+
+
+        <h2>User Infromation</h2>
+        First name<br> <input type="text" name="fistname"><br>
+        Last name<br> <input type="text" name="lastname"><br>
+        Username<br><input type="text" name="username" value="Username"><br>
+        <br>man <input type="radio" name="gender">
+        woman <input type="radio" name="gender"><br>
+        <label for="country">Choose your country:</label>
+        <select id="country" name="country">
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+            <option value="korea">Korea</option>
+        </select>
+
+        <br>Birth <input type="date" name="date1"><br>
+        <br><input type="checkbox" name="Shipping address"> Shipping address is the same as my billing address<br>
+        <br> Zip <input type="textarea" name="zip"><br>
+
+
     </form>
-    
+
 </body>
+
 </html>
