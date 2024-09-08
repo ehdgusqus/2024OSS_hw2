@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Web Page</title>
+    <style>
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        /* 추가 버튼을 파란색으로 스타일링 */
+        #add {
+            padding: 5px;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* 삭제 버튼을 초록색으로 스타일링 */
+        #del {
+            padding: 5px;
+            font-size: 16px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+
+        ul li {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dynamic Web page</h1>
+    <form>
+        <input type="text" id="textInput" name="text" >
+        <input type="button" id="add" name="button" value="추가">
+        <input type="button" id="del" name="button" value="삭제">
+    </form>
+
+    <ul id="output">
+    </ul>
+
+    <script>
+        let add = document.getElementById('add');
+        let del = document.getElementById('del');
+        let textInput = document.getElementById('textInput');
+        let output = document.getElementById('output');
+
+        add.addEventListener('click', function () {
+            let textValue = textInput.value.trim();
+
+            let li = document.createElement("li");
+            li.textContent = textValue;
+
+            output.appendChild(li);
+            textInput.value = "";
+        });
+
+        del.addEventListener('click', function () {
+            if (output.lastChild) {
+                output.removeChild(output.lastChild);
+            } else {
+                alert("No items to delete!");
+            }
+        });
+    </script>
+</body>
+
+</html>

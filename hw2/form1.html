@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h2>Checkout form</h2>
+        <p>Below is an example form built entirely with Bootstrap’s form controls.
+            Each required form group has a validation state that can be triggered by attempting to submit the form
+            without completing it.
+        </p>
+    </div>
+
+    <div>
+        <h2>Billing address</h2>
+        <form action="form1.html">
+            <label for="firstname">First name</label><br>
+            <input type="text" name="firstname" id="firstname"><br>
+
+            <label for="lastname">Last name</label><br>
+            <input type="text" name="lastname" id="lastname"><br>
+
+            <label for="birth">Birth</label><br>
+            <input type="date" id="birth" name="birth"><br>
+
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username" placeholder="Username"><br>
+
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email" placeholder="you@example.com"><br>
+
+            <label for="address">Address</label><br>
+            <input type="text" id="address" name="address" value="1234 Main St"><br>
+
+            <label for="address2">Address 2</label><br>
+            <input type="text" id="address2" name="address2" value="Apartment or suite"><br>
+
+            <label for="country">Country</label>
+            <select id="country" name="country">
+                <option>Choose..</option>
+                <option>United States</option>
+            </select>
+
+            <label for="state">State</label>
+            <select id="state" name="state">
+                <option>Choose..</option>
+                <option>California</option>
+            </select>
+
+            <label for="zip">Zip</label>
+            <input type="text" id="zip" name="zip"><br>
+
+            <label for="memo">Memo</label>
+            <textarea id="memo" name="memo"></textarea>
+            <hr>
+
+            <input type="checkbox" name="checkbox1"><span>Shipping address is the same as my billing address</span><br>
+            <input type="checkbox" name="checkbox2"><span>Save this information for next time</span><br>
+            <hr>
+
+            <h2>Payment</h2>
+            <input type="radio" id="creditcard" name="payment">
+            <label for="creditcard">Credit card</label><br>
+
+            <input type="radio" id="debitcard" name="payment">
+            <label for="debitcard">Debit card</label><br>
+
+            <input type="radio" id="paypal" name="payment">
+            <label for="paypal">PayPal</label><br>
+
+            <label for="nameoncard">Name on Card</label><br>
+            <input type="text" id="nameoncard" name="nameoncard"><br>
+
+            <label for="creditcardnumber">Credit card number</label><br>
+            <input type="text" id="creditcardnumber" name="creditcardnumber"><br>
+
+            <label for="expiration">Expiration</label><br>
+            <input type="text" id="expiration" name="expiration"><br>
+
+            <label for="cvv">CVV</label><br>
+            <input type="text" id="cvv" name="cvv"><br>
+            <hr>
+
+            <input type="submit" name="checkout" value="Continue to checkout">
+
+            <h2>Your cart</h2>
+            <p>Product name</p>
+            <p>Second product</p>
+            <p>Third item</p>
+            <p>Promo code</p>
+            <p>Total(USD)</p>
+            <input type="text" name="promocode" value="Promo code">
+            <input type="button" name="redeem" value="Redeem">
+        </form>
+    </div>
+
+</body>
+
+</html>

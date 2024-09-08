@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #header {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #header p {
+            font-size: 20px;
+        }
+
+        .page-layout {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main {
+            flex: 3;
+            padding: 20px;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .sidebar {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .form-group2 {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .box {
+            border-radius: 4px;
+            padding: 10px;
+            border: 1px solid;
+        }
+
+        .form-group input {
+            margin-bottom: 15px;
+        }
+
+        #bottom_button {
+            flex: 3;
+            width: 600px;
+            border-radius: 10px;
+            color: white;
+            background-color: #6666FF;
+            padding: 15px;
+        }
+
+        .sidebar_box {
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 0;
+        }
+
+        .sidebar h2 {
+            color: #6666FF;
+        }
+
+        .promo-container {
+            display: flex;
+            gap: 0;
+            border-radius: 10px;
+        }
+
+        .promo-container input[type="text"] {
+            border: 1px solid black;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .promo-container input[type="button"] {
+            padding: 10px;
+            background-color: #5e5656;
+            color: white;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const firstname = document.getElementById("firstname").value;
+            const lastname = document.getElementById("lastname").value;
+            const email = document.getElementById("email").value;
+            const zip = document.getElementById("zip").value;
+
+            if (firstname === "" || lastname === "" || email === "" || zip === "") {
+                alert("모든 필드를 채워 주세요!");
+                return false;
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailPattern.test(email)) {
+                alert("올바른 이메일 주소를 입력하세요.");
+                return false;
+            }
+
+            return true; 
+        }
+
+        function confirmSubmit() {
+            if (confirm("이 양식을 제출하시겠습니까?")) {
+                alert("양식이 제출되었습니다.");
+            } else {
+                alert("양식 제출이 취소되었습니다.");
+            }
+        }
+
+        function showKey(event) {
+            alert("Key pressed: " + event.key);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="header">
+            <h2>Checkout form</h2>
+            <p>Below is an example form built entirely with Bootstrap’s form controls.
+                Each required form group has a validation state that can be triggered by attempting to submit the form
+                without completing it.
+            </p>
+        </div>
+
+        <div class="page-layout">
+            <!-- 메인 콘텐츠 영역 -->
+            <div class="main">
+                <h2>Billing address</h2>
+                <form action="form1.html">
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="firstname">First name</label>
+                            <input type="text" class="box" name="firstname" id="firstname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">Last name</label>
+                            <input type="text" class="box" name="lastname" id="lastname">
+                        </div>
+                    </div>
+                    <br>
+
+                    <label for="birth">Birth</label><br>
+                    <input type="date" id="birth" name="birth"><br><br>
+
+                    <label for="username">Username</label><br>
+                    <input type="text" id="username" class="box full-width" name="username"
+                        placeholder="Username"><br><br>
+
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" class="box full-width" name="email"
+                        placeholder="you@example.com"><br><br>
+
+                    <label for="address">Address</label><br>
+                    <input type="text" id="address" class="box full-width" name="address" value="1234 Main St"><br><br>
+
+                    <label for="address2">Address 2</label><br>
+                    <input type="text" id="address2" class="box full-width" name="address2"
+                        value="Apartment or suite"><br><br>
+
+                    <!-- Country, State, Zip을 한 줄에 배치 -->
+                    <div class="row">
+                        <div class="form-group2">
+                            <label for="country">Country</label>
+                            <select id="country" class="box" name="country">
+                                <option>Choose..</option>
+                                <option>United States</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group2">
+                            <label for="state">State</label>
+                            <select id="state" class="box" name="state">
+                                <option>Choose..</option>
+                                <option>California</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group2">
+                            <label for="zip">Zip</label>
+                            <input type="text" id="zip" class="box" name="zip">
+                        </div>
+                    </div>
+                    <br>
+
+                    <label for="memo">Memo</label>
+                    <textarea id="memo" name="memo"></textarea>
+                    <hr>
+
+                    <input type="checkbox" name="checkbox1"><span>Shipping address is the same as my billing
+                        address</span><br>
+                    <input type="checkbox" name="checkbox2"><span>Save this information for next time</span><br>
+                    <hr>
+
+                    <h2>Payment</h2>
+                    <input type="radio" id="creditcard" name="payment">
+                    <label for="creditcard">Credit card</label><br>
+
+                    <input type="radio" id="debitcard" name="payment">
+                    <label for="debitcard">Debit card</label><br>
+
+                    <input type="radio" id="paypal" name="payment">
+                    <label for="paypal">PayPal</label><br><br>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="nameoncard">Name on Card</label>
+                            <input type="text" class="box" id="nameoncard" name="nameoncard">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="creditcardnumber">Credit card number</label>
+                            <input type="text" class="box" id="creditcardnumber" name="creditcardnumber">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="expiration">Expiration</label>
+                            <input type="text" class="box" id="expiration" name="expiration">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" class="box" id="cvv" name="cvv">
+                        </div>
+                    </div>
+                    <hr>
+
+                    <input type="submit" id="bottom_button" name="checkout" value="Continue to checkout"
+                        onclick="confirmSubmit()" onmouseover="alert('Submit 버튼에 마우스를 올렸습니다.')"
+                        onmouseout="alert('Submit 버튼에서 마우스를 내렸습니다.')">
+                </form>
+            </div>
+
+            <!-- 사이드바 영역 -->
+            <div class="sidebar">
+                <h2>Your cart</h2>
+                <p class="sidebar_box">Product name</p>
+                <p class="sidebar_box">Second product</p>
+                <p class="sidebar_box">Third item</p>
+                <p class="sidebar_box">Promo code</p>
+                <p class="sidebar_box">Total(USD)</p><br>
+                <div class="promo-container">
+                    <input type="text" name="promocode" value="Promo code">
+                    <input type="button" name="redeem" value="Redeem">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
