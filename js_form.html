@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            let f = document.form1;
+            let title = f.title;
+            let username = f.username;
+
+            if(title.value == ''){
+                alert("제목을 입력하세요");
+                tilte.focus();
+                return false;
+            }
+            else if(username.value == ''){
+                alert("이름을 입력하세요");
+                tilte.focus();
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="form1" onsubmit="return check()">
+        제목: <input type="text" name="title"><br>
+        이름: <input type="text" name="username"> <br>
+        내용: <textarea cols="20" rows="5" name="content"></textarea><br>
+        <button onclick="check()">저장</button>
+
+    </form>
+</body>
+</html>

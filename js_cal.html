@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function add(){
+            let n1 = document.getElementById("n1");
+
+            let n2 = documnet.getElementById("n2");
+
+            let sum = parseInt(n1) + parseInt(n2);
+
+            let r = document.getElementById("result");
+            r.value = sum;
+        }
+    </script>
+</head>
+<body>
+    <h1>덧셈 계산기</h1>
+        <input type="text" name="first" id="n1" size="2"> +
+        <input type="text" name="Second" id="n2" size="2">
+        <button onclick="add()">=</button>
+        <input type="text" name="result" size="2"><br>
+        <br><input type="reset" value="초기화">
+</body>
+</html>
